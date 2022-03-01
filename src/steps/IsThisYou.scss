@@ -1,0 +1,47 @@
+#profile-details {
+  width: 606px;
+  height: 123px;
+  border: 1px solid #ececec;
+  border-radius: 8px;
+  margin-left: 375px;
+  align-items: center;
+  display: flex;
+  margin-bottom: 38px;
+
+  img {
+    margin-left: 28px;
+  }
+
+  span {
+    font-family: "Inter" sans-serif;
+    margin-left: 28px;
+    font-size: 28px;
+    color: #000;
+  }
+}
+
+#is-this-you-questions {
+  margin-left: 375px;
+
+  .questions-btn {
+    cursor: pointer;
+    width: 156px;
+    height: 60px;
+    background-color: #000;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 8px;
+    padding: 23px 30px;
+    text-align: center;
+    margin-top: 24px;
+    margin-right: 40px;
+  }
+
+  .custom-radio {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+}

@@ -1,0 +1,16 @@
+.question {
+    display: flex;
+    margin-left: 153px; 
+    align-items: center;
+  
+    img {
+      height: 48px;
+      width: 48px;
+    }
+  }
+  .question-text {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    margin-left: 20px;
+  }
