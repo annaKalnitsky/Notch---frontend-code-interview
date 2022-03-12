@@ -6,6 +6,8 @@ import Up from "../assets/up.svg";
 import PageTitle from "./components/PageTitle/PageTitle";
 import Question from "./components/Question/Question";
 import "./IsThisYou.scss";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const RADIO_BUTTON_GROUP = "is-this-you";
 export const IsThisYou: FC<StepInput> = ({ userInput, setUserInput }) => {
@@ -14,21 +16,37 @@ export const IsThisYou: FC<StepInput> = ({ userInput, setUserInput }) => {
   };
 
   return (
-    <section id="isThisYou">
+    <section id="isThisYou">   
+    <motion.div 
+      initial={{ opacity: 0, y: -100, }} 
+      animate={{ opacity: 1, y: 0, }}
+      exit={{ opacity: 0, y: 100 }}
+      transition = {{ delay: 1, duration: 1}}
+    >
+   
       <PageTitle
         title={
           <div className="title-wrapper">
+            <Link to='/instagram-username'>
             <button>
-              <img src={Up} alt="CustomerSupportImg" />
+              <img src={Up} alt="CustomerSupportImg"/>
             </button>
+            </Link>
             <div>
               <p className="title-text">
-                Roee, What is your Instagram username?<span>@ tomcruise</span>
+                What is your Instagram username?<span>@ tomcruise</span>
               </p>
             </div>
           </div>
         }
       />
+    </motion.div>
+    <motion.div 
+      initial={{ opacity: 0, y: 200 }} 
+      animate={{ opacity: 1, y: 0}}
+      exit={{ opacity: 0, y: -200 }}
+      transition = {{ duration: 1}}
+    >
       <Question
         question={
           <div className="question">
@@ -40,10 +58,11 @@ export const IsThisYou: FC<StepInput> = ({ userInput, setUserInput }) => {
       <main>
         <div id="profile-details">
           <img src={profilePictureUrl} />
-          <span>{userInput.instagramUsername}</span>
+          <span>tomcruise{userInput.instagramUsername}</span>
         </div>
         <div id="is-this-you-questions">
           <label className="questions-btn">
+            <Link className="radio-link"  to=''>
             <input
               type="radio"
               className="custom-radio"
@@ -51,9 +70,10 @@ export const IsThisYou: FC<StepInput> = ({ userInput, setUserInput }) => {
               onClick={() => setAnswer(true)}
               defaultChecked={userInput.isThisYou}
             />
-            Yes, that's me!
+            Yes, that's me!</Link>
           </label>
           <label>
+            <Link className="radio-link black" to=''>
             <input
               type="radio"
               className="custom-radio"
@@ -61,10 +81,11 @@ export const IsThisYou: FC<StepInput> = ({ userInput, setUserInput }) => {
               onClick={() => setAnswer(false)}
               defaultChecked={userInput.isThisYou === false}
             />
-            No, that's somebody else
+            No, that's somebody else</Link>            
           </label>
         </div>
-      </main>
+      </main>    
+    </motion.div>
     </section>
   );
 };

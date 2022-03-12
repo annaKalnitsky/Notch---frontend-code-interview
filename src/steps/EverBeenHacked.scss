@@ -1,3 +1,5 @@
+
+
 .support {
   display: flex;
   margin-left: 304px;
@@ -21,24 +23,58 @@
   display: flex;
   margin-top: 20px;
   margin-left: 349px;
+
+
 }
 
 .inputs-text {
   border-radius: 8px;
   border: 1px solid #ddd;
-  padding: 15px 20px 20px 20px;
+  padding: 20px;
   margin-left: 24px;
+  cursor: pointer;
 
-  input {
-    height: 20px;
-    width: 20px;
-    color: #858585;
+  &:hover,:active{
+    background-color: #F9F0FF;
+    border: 1px solid #AE00FF; 
   }
+  
+ 
+  
+
+  input[type=radio] {
+    display: none;
+  }
+
+  input[type=radio]:checked + span:before {
+    background: url(../assets/radio.svg) 0 0 no-repeat;
+   
+
+  }
+  
+ 
+
   span {
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 16px;
     color: #545454;
     margin-left: 15px;
+
+    &:hover {
+      color: #000;
+    }
+
+  
+    &:before  {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      background: url(../assets/radio-g.svg) 0 0 no-repeat;
+      }
+      
+
   }
 }
