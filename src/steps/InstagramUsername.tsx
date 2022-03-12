@@ -5,12 +5,10 @@ import { StepInput } from "../models/Step";
 import "./InstagramUsername.scss";
 import PageTitle from "./components/PageTitle/PageTitle";
 import Question from "./components/Question/Question";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Box from "@mui/material/Box";
 import TextField from '@mui/material/TextField';
 import { motion } from "framer-motion";
-
-
 
 
 
@@ -28,20 +26,6 @@ export const InstagramUsername: FC<StepInput> = ({
     event.preventDefault();
   };
 
-  const [loading, setLoading] = useState(false);
-  useEffect(()=> {
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-    }, 3000)
-  },[])
-
-  const history = useHistory();
-
-  function delayAndGo(e, path) {
-    e.preventDefault();
-    setTimeout(() => history.push(path), 3000);
-  }
 
   return (    
     <section id="instagram-name"> 
@@ -100,7 +84,7 @@ export const InstagramUsername: FC<StepInput> = ({
             variant="outlined" 
             />
           </Box>
-          <Link to='/is-this-you' className="instagram-btn" onClick={(e) => delayAndGo(e, "/is-this-you")} type="submit">Next</Link>                              
+          <Link to='/is-this-you' className="instagram-btn" type="submit">Next</Link>                              
         </form>
       </div>
       </motion.div>
